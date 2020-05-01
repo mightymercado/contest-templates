@@ -12,7 +12,7 @@ int pow_mod(int b, int e) {
  
 void calc_fact() {
   fact[0] = 1;
-  for (int i = 0; i <= maxn; i++) fact[i] = (i64) fact[i - 1] * i % mod;
+  for (int i = 1; i <= maxn; i++) fact[i] = (i64) fact[i - 1] * i % mod;
   ifact[maxn] = pow_mod(fact[maxn], mod - 2);
   for (int i = maxn - 1; i >= 0; i--) ifact[i] = (i64) ifact[i + 1] * (i + 1) % mod;
 }
