@@ -27,7 +27,7 @@ int walk(int i, int k) {
 
 int lca(int i, int j) {
   if (dep[i] > dep[j]) swap(i, j);
-  j = walk(j, abs(dep[j] - dep[i]));
+  j = walk(j, dep[j] - dep[i]);
   if (i == j) return i;
   for (int d = 18; d >= 0; d--) 
     if (par[i][d] != par[j][d]) 
