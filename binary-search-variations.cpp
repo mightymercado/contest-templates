@@ -1,11 +1,3 @@
-int t_search(function<long long(int)> f, int l, int r) {
-  for (--l; r - l > 1; ) {
-    int m = (r + l) >> 1;
-    f(m) < f(m + 1) ? r = m : l = m; // < for max, > for min
-  }
-  return l + 1; 
-}
-
 int atmost(vector<int>::iterator begin, vector<int>::iterator end, int x) {
   int n = end - begin;
   return upper_bound(begin, end, x) - begin;
