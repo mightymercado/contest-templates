@@ -33,3 +33,13 @@ int less_than(vector<int>::iterator begin, vector<int>::iterator end, int x) {
 int count_range(vector<int>::iterator begin, vector<int>::iterator end, int L, int R) {
   return atleast(begin, end, L) - greater_than(begin, end, R);
 }
+
+template <typename func>
+int bsearch(int L, int R, func&& f) {
+  // find first x such that f(x) == true
+  while (L < R) {
+      int M = (L + R) / 2;
+      (f(M) ? R = M : L = M + 1);
+  }
+  return L;
+}
