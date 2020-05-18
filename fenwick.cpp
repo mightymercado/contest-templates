@@ -1,10 +1,12 @@
 template <typename T>
 class Fenwick {
 public:
-  T t[maxn + 1] = {0};
+  vector<T> t;
   int n;
 
-  Fenwick(int n) : n(n) {}
+  Fenwick(int n) : n(n) {
+    t = vector<T>(n + 1);
+  }
 
   T get(int i) {
     T s = 0;
